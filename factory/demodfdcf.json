@@ -1,0 +1,9 @@
+{
+	"name": "demodfdcf",
+	"location": "westus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2fde79da-31e3-4fde-a958-0c506fdfed14",
+		"tenantId": "a36450eb-db06-42a7-8d1b-026719f701e3"
+	}
+}
