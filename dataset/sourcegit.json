@@ -1,0 +1,22 @@
+{
+	"name": "sourcegit",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linked_git",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "Adithi-A/azureproject/main/fact_sales_2.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
