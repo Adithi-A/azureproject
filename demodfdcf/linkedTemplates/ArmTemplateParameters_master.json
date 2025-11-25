@@ -14,6 +14,9 @@
 		"linkedservicedL_properties_typeProperties_url": {
 			"value": "https://demostorageaccountdcf.dfs.core.windows.net/"
 		},
+		"managerTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/f592e323-15e5-4524-80d7-4cb862ee9284/resourceGroups/RG-DemoDCF/providers/Microsoft.Storage/storageAccounts/demostorageaccountdcf"
+		},
 		"containerUri": {
 			"value": ""
 		},
