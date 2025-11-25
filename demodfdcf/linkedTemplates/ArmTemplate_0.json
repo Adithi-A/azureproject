@@ -22,6 +22,10 @@
 		"managerTrigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/f592e323-15e5-4524-80d7-4cb862ee9284/resourceGroups/RG-DemoDCF/providers/Microsoft.Storage/storageAccounts/demostorageaccountdcf"
+		},
+		"trigger_manager_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f592e323-15e5-4524-80d7-4cb862ee9284/resourceGroups/RG-DemoDCF/providers/Microsoft.Storage/storageAccounts/demostorageaccountdcf"
 		}
 	},
 	"variables": {
@@ -56,6 +60,26 @@
 						"type": "SecureString",
 						"value": "[parameters('linkedservicedL_accountKey')]"
 					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/managerTrigger')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/source/blobs/csvfiles/fact_sales_1.csv",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('managerTrigger_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
 				}
 			},
 			"dependsOn": []
@@ -910,12 +934,12 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/managerTrigger')]",
+			"name": "[concat(parameters('factoryName'), '/trigger_manager')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
+				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
@@ -929,7 +953,7 @@
 				"typeProperties": {
 					"blobPathBeginsWith": "/source/blobs/csvfiles/fact_sales_1.csv",
 					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('managerTrigger_properties_typeProperties_scope')]",
+					"scope": "[parameters('trigger_manager_properties_typeProperties_scope')]",
 					"events": [
 						"Microsoft.Storage.BlobCreated"
 					]

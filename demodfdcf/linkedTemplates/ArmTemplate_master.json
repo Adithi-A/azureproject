@@ -23,6 +23,10 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/f592e323-15e5-4524-80d7-4cb862ee9284/resourceGroups/RG-DemoDCF/providers/Microsoft.Storage/storageAccounts/demostorageaccountdcf"
 		},
+		"trigger_manager_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/f592e323-15e5-4524-80d7-4cb862ee9284/resourceGroups/RG-DemoDCF/providers/Microsoft.Storage/storageAccounts/demostorageaccountdcf"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -61,6 +65,9 @@
 					},
 					"managerTrigger_properties_typeProperties_scope": {
 						"value": "[parameters('managerTrigger_properties_typeProperties_scope')]"
+					},
+					"trigger_manager_properties_typeProperties_scope": {
+						"value": "[parameters('trigger_manager_properties_typeProperties_scope')]"
 					}
 				}
 			},
