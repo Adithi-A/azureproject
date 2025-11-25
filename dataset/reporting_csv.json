@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText2",
+	"name": "reporting_csv",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "linkedservicedL",

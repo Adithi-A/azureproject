@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -120,7 +121,7 @@
 										],
 										"outputs": [
 											{
-												"referenceName": "DelimitedText2",
+												"referenceName": "reporting_csv",
 												"type": "DatasetReference",
 												"parameters": {
 													"p_file_name": {
