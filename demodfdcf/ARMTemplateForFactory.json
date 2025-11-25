@@ -533,6 +533,30 @@
 								"enablePartitionDiscovery": false
 							}
 						}
+					},
+					{
+						"name": "ExecuteGitPipeline",
+						"type": "ExecutePipeline",
+						"dependsOn": [
+							{
+								"activity": "DeleteFile",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "pipelinegit",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
 					}
 				],
 				"policy": {
@@ -542,7 +566,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/source_csv')]",
-				"[concat(variables('factoryId'), '/datasets/sink_csv')]"
+				"[concat(variables('factoryId'), '/datasets/sink_csv')]",
+				"[concat(variables('factoryId'), '/pipelines/pipelinegit')]"
 			]
 		},
 		{
