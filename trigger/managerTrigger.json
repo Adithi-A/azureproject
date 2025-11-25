@@ -1,0 +1,24 @@
+{
+	"name": "managerTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipelinemanager",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/source/blobs/csvfiles/fact_sales_1.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/f592e323-15e5-4524-80d7-4cb862ee9284/resourceGroups/RG-DemoDCF/providers/Microsoft.Storage/storageAccounts/demostorageaccountdcf",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
